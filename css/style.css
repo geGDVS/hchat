@@ -1,0 +1,20 @@
+.message {
+    margin: 10px;
+    padding: 10px;
+    /* 让消息根据内容自适应，但不超过最大宽度 */
+    max-width: 70%;
+    width: auto;
+}
+
+
+.message-row {
+    display: flex;
+    justify-content: flex-end; /* 将子项推到右侧 */
+    align-items: flex-start;
+}
+
+.message-right {
+    display: inline-block; /* 与 .message 保持一致的收缩行为 */
+    margin: 0px;
+    margin-right: 10px;     /* 与容器右边留白 */
+}

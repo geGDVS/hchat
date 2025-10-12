@@ -1,47 +1,41 @@
 <!doctype html>
 <html lang="zh-CN" class="mdui-theme-auto">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
-    <meta name="renderer" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/mdui@2.0.3/mdui.css">
-    <script src="https://unpkg.com/mdui@2.0.3/mdui.global.js"></script>
+  	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+		<meta name="renderer" content="webkit"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+		<link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
 
-    <title>Hack Chat</title>
-  </head>
-  <body>
-	  <mdui-layout>
-		<mdui-navigation-rail divider contained class="example-navigation-rail">
-			<mdui-navigation-rail-item icon="chat_bubble--outlined"></mdui-navigation-rail-item>
-		</mdui-navigation-rail>
-	  
-	    <mdui-layout-item
-	      placement="left"
-	      class="example-layout-item"
-	    >
-			<mdui-list style="margin:20px; width: 200px">
-				<mdui-list-item alignment="start" description="Supporting text" id="lounge" rounded>
-					Lounge
-				</mdui-list-item>
-			</mdui-list>
-		</mdui-layout-item>
-	  
-	  <mdui-layout-item
-	    placement="bottom"
-	    class="example-layout-item"
-	  >
-		<mdui-text-field variant="outlined" id="text" label="Choose a channel on the left" autosize></mdui-text-field>
+		<title>Hack Chat</title>
+  	</head>
+  	<body>
+	  	<mdui-layout>
+			<mdui-navigation-rail divider contained class="navigation-rail">
+				<mdui-navigation-rail-item icon="chat_bubble--outlined"></mdui-navigation-rail-item>
+			</mdui-navigation-rail>
 		
-	  </mdui-layout-item>
-	  	  
-	  
-	    <mdui-layout-main class="example-layout-main" style="margin:20px; min-height: 620px">
-			main
-		</mdui-layout-main>
-	  </mdui-layout>
+			<mdui-layout-item placement="left">
+				<mdui-menu id="channel-select" selects="single" style="margin:20px; width: 200px">
+					<mdui-menu-item value="lounge">Lounge</mdui-menu-item>
+					<mdui-menu-item value="bot">Bot</mdui-menu-item>
+				</mdui-menu>
+			</mdui-layout-item>
+		
+			<mdui-layout-item placement="bottom">
+				<mdui-text-field readonly variant="outlined" id="text" value="Choose a channel on the left" autosize></mdui-text-field>
+				
+			</mdui-layout-item>
+
+
+			<mdui-layout-main style="margin:20px; height:calc(100vh - 60px); overflow:auto" id="main">
+				
+			</mdui-layout-main>
+	  	</mdui-layout>
 		
 		<script src="js/script.js"></script>
-  </body>
+  	</body>
 </html>
