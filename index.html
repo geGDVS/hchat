@@ -9,8 +9,9 @@
 		<link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-		<title>Hack Chat</title>
+		<title>H Chat</title>
   	</head>
   	<body>
 	  	<mdui-layout>
@@ -18,22 +19,20 @@
 				<mdui-navigation-rail-item icon="chat_bubble--outlined"></mdui-navigation-rail-item>
 			</mdui-navigation-rail>
 		
-			<mdui-layout-item placement="left">
-				<mdui-menu id="channel-select" selects="single" style="margin:20px; width: 200px">
+			<mdui-layout-item placement="left" style="overflow: hidden;">
+				<mdui-menu id="channel-select" selects="single" style="margin:20px; width: 200px; margin-right: 0;">
 					<mdui-menu-item value="lounge">Lounge</mdui-menu-item>
 					<mdui-menu-item value="bot">Bot</mdui-menu-item>
 				</mdui-menu>
 			</mdui-layout-item>
 		
-			<mdui-layout-item placement="bottom">
-				<mdui-text-field readonly variant="outlined" id="text" value="Choose a channel on the left" autosize></mdui-text-field>
-				
-			</mdui-layout-item>
+		<mdui-layout-item placement="bottom" style="overflow: hidden;">
+			<mdui-text-field readonly variant="outlined" id="text" value="Choose a channel on the left" autosize style="margin: 20px;"></mdui-text-field>
+		</mdui-layout-item>
 
-
-			<mdui-layout-main style="margin:20px; height:calc(100vh - 60px); overflow:auto" id="main">
-				
-			</mdui-layout-main>
+		<mdui-layout-main id="layout-main" style="margin: 20px;">
+			<div id="main" style="height: 100%; width: 100%;"></div>
+		</mdui-layout-main>
 	  	</mdui-layout>
 		
 		<script src="js/script.js"></script>
